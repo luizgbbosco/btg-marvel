@@ -1,0 +1,7 @@
+<ng-container *ngIf="menuValues">
+  <nav [ngClass]="menuValues.isDarkMode ? 'dark-mode' : 'light-mode'">
+    <ul class="w-100" *ngFor="let item of menuValues.menuItems">
+      <li routerLinkActive="active-tab w-100" [routerLink]="item.menuItemRoute">{{item.menuItemName}}</li>
+    </ul>
+  </nav>
+</ng-container>

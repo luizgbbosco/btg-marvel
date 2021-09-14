@@ -1,0 +1,31 @@
+nav {
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+
+li {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+
+.active-tab {
+  justify-content: center;
+  display: flex;
+  color: #ffffff;
+  width: 100%;
+}
+
+.dark-mode {
+  background-color: #233446;
+}
+
+.light-mode {
+  background-color: #8f8f8f;
+}
+
+.w-100 {
+  width: 100%;
+}
