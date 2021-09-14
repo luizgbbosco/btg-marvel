@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuModule } from './shared/components/menu/menu.module';
 import { ButtonModule } from './shared/components/button/button.module';
+import { CardModule } from './shared/components/card/card.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ButtonModule } from './shared/components/button/button.module';
     BrowserModule,
     AppRoutingModule,
     MenuModule,
-    ButtonModule
+    ButtonModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
