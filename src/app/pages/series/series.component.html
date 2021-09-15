@@ -1,0 +1,16 @@
+<div class="loading" *ngIf="loading">
+    <img src="../../../assets/loading.gif">
+</div>
+<ng-container *ngIf="!loading">
+    <div class="card">
+        <app-card *ngFor="let serie of seriesList" [title]="serie.title">
+            <div class="img">
+                <img class="img-serie" src="{{serie.thumbnail.path}}" alt="">
+            </div>
+            <div class="links">
+                <app-button *ngFor="let url of serie.urls" [label]="url.type" [url]="url.url">
+                </app-button>
+            </div>
+        </app-card>
+    </div>
+</ng-container>

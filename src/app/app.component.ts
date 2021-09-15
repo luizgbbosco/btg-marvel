@@ -19,8 +19,8 @@ export class AppComponent {
         menuItemRoute: 'creators',
       },
       {
-        menuItemName: 'ItemC',
-        menuItemRoute: 'page3',
+        menuItemName: 'Series',
+        menuItemRoute: 'series',
       }
     ]
   }

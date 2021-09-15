@@ -23,5 +23,9 @@ export class MarvelApiServiceService {
     return this.http.get<any>(`${this.URL_API}creators?orderBy=middleName&ts=${this.TS}&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`).pipe();
   }
 
+  getSeries(): Observable<any>{
+    return this.http.get<any>(`${this.URL_API}series?contains=infinite%20comic&orderBy=startYear&ts=${this.TS}&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`).pipe();
+  }
+
 
 }

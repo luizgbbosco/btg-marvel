@@ -17,8 +17,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/creators/creators.module').then(m => m.CreatorsModule),
   },
   {
-    path: 'page3',
-    loadChildren: () => import('./pages/page3/page3.module').then(m => m.Page3Module),
+    path: 'series',
+    loadChildren: () => import('./pages/series/series.module').then(m => m.SeriesModule),
   },
   {
     path: '**', component: HeroesComponent

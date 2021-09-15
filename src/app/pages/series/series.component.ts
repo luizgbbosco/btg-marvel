@@ -2,38 +2,39 @@ import { Component, OnInit } from '@angular/core';
 import { MarvelApiServiceService } from 'src/app/shared/services/marvel-api-service.service';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  selector: 'app-series',
+  templateUrl: './series.component.html',
+  styleUrls: ['./series.component.scss']
 })
-export class HeroesComponent implements OnInit {
+export class SeriesComponent implements OnInit {
 
   constructor(private marvelService: MarvelApiServiceService) { }
 
-  heroesList: Array<any> = [];
+  seriesList: Array<any> = [];
   loading: boolean = false;
 
   ngOnInit() {
-    this.getCharacters();
+    this.getSeries();
   }
 
-  getCharacters(): void {
+  getSeries(): void {
     this.loading = true;
-    this.marvelService.getCharacters().subscribe(
+    this.marvelService.getSeries().subscribe(
       data => {
-        this.heroesList = data.data.results;
-        this.formatHeroes();
+        this.seriesList = data.data.results;
+        this.formatSeries();
+        console.log(this.seriesList);
       }, error => {
         console.error(error);
         this.loading = false;
       }, () => { }
     )
-  }
+  };
 
-  formatHeroes(): void {
-    this.heroesList.map(hero => {
-      hero.thumbnail.path = `${hero.thumbnail.path}.${hero.thumbnail.extension}`;
-      hero.urls.map((url: { type: string; url: string }) => {
+  formatSeries(): void {
+    this.seriesList.map(serie => {
+      serie.thumbnail.path = `${serie.thumbnail.path}.${serie.thumbnail.extension}`;
+      serie.urls.map((url: { type: string; url: string }) => {
         switch(url.type) {
           case 'detail':
             url.type = 'Detalhes';
@@ -49,6 +50,7 @@ export class HeroesComponent implements OnInit {
     setTimeout(() => {
       this.loading = false;
     }, 1000);
-  }
+  };
+
 
 }
