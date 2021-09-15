@@ -9,19 +9,18 @@ describe('MenuComponent', () => {
 
   const mockTab: Imenu =
   {
-    isDarkMode: true,
     menuItems: [
       {
-        menuItemName: 'ItemA',
-        menuItemRoute: 'routeA',
+        menuItemName: 'Heroes',
+        menuItemRoute: 'heroes',
       },
       {
-        menuItemName: 'ItemB',
-        menuItemRoute: 'routeB',
+        menuItemName: 'Creators',
+        menuItemRoute: 'creators',
       },
       {
-        menuItemName: 'ItemC',
-        menuItemRoute: 'routeC',
+        menuItemName: 'Series',
+        menuItemRoute: 'series',
       }
     ]
   };

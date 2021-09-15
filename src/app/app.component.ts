@@ -23,6 +23,6 @@ export class AppComponent {
         menuItemRoute: 'series',
       }
     ]
-  }
+  };
   title = 'btg-marvel';
 }

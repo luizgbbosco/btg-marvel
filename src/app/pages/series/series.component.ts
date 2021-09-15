@@ -23,7 +23,6 @@ export class SeriesComponent implements OnInit {
       data => {
         this.seriesList = data.data.results;
         this.formatSeries();
-        console.log(this.seriesList);
       }, error => {
         console.error(error);
         this.loading = false;
