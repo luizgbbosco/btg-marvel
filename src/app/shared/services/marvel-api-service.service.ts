@@ -15,8 +15,13 @@ export class MarvelApiServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCharacters(): Observable<any>{
+  getCharacters(): Observable<any>{
     return this.http.get<any>(`${this.URL_API}characters?ts=${this.TS}&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`).pipe();
   }
+
+  getCreators(): Observable<any>{
+    return this.http.get<any>(`${this.URL_API}creators?orderBy=middleName&ts=${this.TS}&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`).pipe();
+  }
+
 
 }

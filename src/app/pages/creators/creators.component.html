@@ -3,12 +3,12 @@
 </div>
 <ng-container *ngIf="!loading">
     <div class="card">
-        <app-card *ngFor="let hero of heroesList" [title]="hero.name">
+        <app-card *ngFor="let creator of creatorsList" [title]="creator.fullName">
             <div class="img">
-                <img class="img-hero" src="{{hero.thumbnail.path}}" alt="">
+                <img class="img-creator" src="{{creator.thumbnail.path}}" alt="">
             </div>
             <div class="links">
-                <app-button *ngFor="let url of hero.urls" [label]="url.type" [url]="url.url">
+                <app-button *ngFor="let url of creator.urls" [label]="url.type" [url]="url.url">
                 </app-button>
             </div>
         </app-card>

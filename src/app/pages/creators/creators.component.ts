@@ -2,39 +2,38 @@ import { Component, OnInit } from '@angular/core';
 import { MarvelApiServiceService } from 'src/app/shared/services/marvel-api-service.service';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  selector: 'app-creators',
+  templateUrl: './creators.component.html',
+  styleUrls: ['./creators.component.scss']
 })
-export class HeroesComponent implements OnInit {
+export class CreatorsComponent implements OnInit {
 
   constructor(private marvelService: MarvelApiServiceService) { }
 
-  heroesList: Array<any> = [];
+  creatorsList: Array<any> = [];
   loading: boolean = false;
 
   ngOnInit() {
-    this.getCharacters();
+    this.getCreators();
   }
 
-  getCharacters(): void {
+  getCreators(): void {
     this.loading = true;
-    this.marvelService.getCharacters().subscribe(
+    this.marvelService.getCreators().subscribe(
       data => {
-        this.heroesList = data.data.results;
-        this.formatHeroes();
-        console.log(this.heroesList);
+        this.creatorsList = data.data.results;
+        this.formatCreators();
       }, error => {
-        console.error(error);
         this.loading = false;
-      }, () => { }
+        console.error();
+      }
     )
-  }
+  };
 
-  formatHeroes(): void {
-    this.heroesList.map(hero => {
-      hero.thumbnail.path = `${hero.thumbnail.path}.${hero.thumbnail.extension}`;
-      hero.urls.map((url: { type: string; url: string }) => {
+  formatCreators(): void {
+    this.creatorsList.map(creator => {
+      creator.thumbnail.path = `${creator.thumbnail.path}.${creator.thumbnail.extension}`;
+      creator.urls.map((url: { type: string; url: string }) => {
         switch(url.type) {
           case 'detail':
             url.type = 'Detalhes';
