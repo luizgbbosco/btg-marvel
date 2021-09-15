@@ -1,5 +1,4 @@
 export interface Imenu {
-  isDarkMode?: boolean,
   menuItems?: ImenuItems[];
 }
 

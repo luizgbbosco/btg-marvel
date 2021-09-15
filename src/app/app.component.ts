@@ -9,7 +9,6 @@ import { Imenu } from './shared/components/menu/models/IMenu.interface';
 export class AppComponent {
   menu: Imenu =
   {
-    isDarkMode: false,
     menuItems: [
       {
         menuItemName: 'ItemA',

@@ -3,27 +3,25 @@ nav {
   position: relative;
   cursor: pointer;
   width: 100%;
+  background-color: #001E61;
 }
 
 li {
   justify-content: center;
   display: flex;
   width: 100%;
+  color: #c1c1c1;
+  font-weight: 400;
+  font-size: 1.3em;
 }
 
 .active-tab {
   justify-content: center;
   display: flex;
-  color: #ffffff;
   width: 100%;
-}
-
-.dark-mode {
-  background-color: #233446;
-}
-
-.light-mode {
-  background-color: #8f8f8f;
+  color: #f1f1f1;
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 .w-100 {
