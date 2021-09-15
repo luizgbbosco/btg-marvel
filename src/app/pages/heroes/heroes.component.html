@@ -1,0 +1,13 @@
+<ng-container *ngIf="heroesList.length > 0">
+    <div class="card">
+        <app-card *ngFor="let hero of heroesList" [title]="hero.name">
+            <div class="img">
+                <img class="img-hero" src="{{hero.thumbnail.path}}" alt="">
+            </div>
+            <div class="links">
+                <app-button *ngFor="let url of hero.urls" [label]="url.type" [url]="url.url">
+                </app-button>
+            </div>
+        </app-card>
+    </div>
+</ng-container>

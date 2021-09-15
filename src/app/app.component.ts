@@ -11,8 +11,8 @@ export class AppComponent {
   {
     menuItems: [
       {
-        menuItemName: 'ItemA',
-        menuItemRoute: 'page1',
+        menuItemName: 'Heroes',
+        menuItemRoute: 'heroes',
       },
       {
         menuItemName: 'ItemB',

@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Page1Component } from './pages/page1/page1.component';
+import { HeroesComponent } from './pages/heroes/heroes.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'page1',
+    redirectTo: 'heroes',
     pathMatch: 'full'
   },
   {
-    path: 'page1',
-    loadChildren: () => import('./pages/page1/page1.module').then(m => m.Page1Module),
+    path: 'heroes',
+    loadChildren: () => import('./pages/heroes/heroes.module').then(m => m.HeroesModule),
   },
   {
     path: 'page2',
@@ -21,7 +21,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/page3/page3.module').then(m => m.Page3Module),
   },
   {
-    path: '**', component: Page1Component
+    path: '**', component: HeroesComponent
   }
 ];
 
