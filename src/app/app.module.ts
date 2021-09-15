@@ -6,6 +6,7 @@ import { MenuModule } from './shared/components/menu/menu.module';
 import { ButtonModule } from './shared/components/button/button.module';
 import { CardModule } from './shared/components/card/card.module';
 import { FooterModule } from './shared/components/footer/footer.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterModule } from './shared/components/footer/footer.module';
     MenuModule,
     ButtonModule,
     CardModule,
-    FooterModule
+    FooterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { MarvelApiServiceService } from 'src/app/shared/services/marvel-api-service.service';
 
 @Component({
   selector: 'app-page1',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page1Component implements OnInit {
 
-  constructor() { }
+  constructor(private marvelService: MarvelApiServiceService) { }
 
   ngOnInit() {
+    this.getCharacters();
+  }
+
+  getCharacters(){
+    this.marvelService.getAllCharacters().subscribe(
+      data => {
+        console.log(data.data.results)
+      }
+    )
   }
 
 }
