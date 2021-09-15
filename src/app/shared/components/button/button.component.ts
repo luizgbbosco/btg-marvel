@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -8,10 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ButtonComponent implements OnInit {
 
   @Input() label: string = '';
+  @Output() onClick = new EventEmitter<MouseEvent>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onClickButton(event: MouseEvent): void {
+    this.onClick.emit(event);
   }
 
 }
